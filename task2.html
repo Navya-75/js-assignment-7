@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(55, 240, 206);
+        }
+        .button{
+            display: inline;
+            cursor: pointer;
+        }
+        h1{
+            margin-top: 120px;
+            font-size: 50px;
+        }
+        #start{
+            font-size: 18px;
+            padding: 12px;
+            background-color: rgb(14, 153, 208);
+            border-radius: 10px;
+            width: 140px;
+            font-weight: bold;
+        }
+        #stop{
+            font-size: 18px;
+            padding: 12px;
+            background-color: rgb(208, 14, 14);
+            border-radius: 10px;
+            width: 140px;
+            font-weight: bold;
+        }
+        #reset{
+            font-size: 18px;
+            padding: 12px;
+            background-color: rgb(14, 208, 50);
+            border-radius: 10px;
+            width: 140px;
+            font-weight: bold;
+        }
+        #timer{
+            font-size: 30px;
+            margin: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>TIMER</h1>
+<div id="timer">25:00</div>
+<div class="button">
+    <button onclick="start()" id="start">START</button>
+    <button onclick="stop()" id="stop">STOP</button>
+    <button onclick="reset()" id="reset">RESET</button>
+</div>
+
+<script>
+    let timer;
+    let timeLeft = 25 * 60;
+    let isRunning = false;
+    function updatedisplay() {
+            const minutes = Math.floor(timeLeft/60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
+        }
+
+        function start() {
+            if (!isRunning) {
+                isRunning = true;
+                timer = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        updatedisplay();
+                    }
+                    else {
+                        clearInterval(timer);
+                        
+                    }
+                },1000);
+            }
+        };
+
+        function stop(){
+            clearInterval(timer);
+            isRunning = false;
+        };
+
+        function reset() {
+            clearInterval(timer);
+            isRunning = false;
+            timeLeft = 25 * 60;
+            updatedisplay();
+        }
+
+        document.getElementById("start").onclick = start;
+        document.getElementById("stop").onclick = stop;
+        document.getElementById("reset").onclick = reset;
+        updatedisplay();
+    
+
+</script>
+
+    
+</body>
+</html>

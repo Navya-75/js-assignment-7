@@ -25,3 +25,49 @@ This is a basic To-Do List web application built using **HTML** and **JavaScript
 - No external libraries or frameworks are required.
 - This is a beginner-friendly project to understand DOM manipulation using JavaScript.
 
+🕒 25-Minute Countdown Timer
+This is a simple web-based countdown timer built using HTML, CSS, and JavaScript. The timer starts from 25:00 (similar to a Pomodoro timer), and includes Start, Stop, and Reset controls.
+
+🔧 Features
+⏱ Starts from 25:00 and counts down every second.
+
+🛑 Can be stopped at any time.
+
+🔁 Resets to 25:00.
+
+🎨 Styled with vibrant colors and responsive layout.
+
+📁 Files Included
+index.html – The main file containing structure, styling, and scripts.
+
+(Optional) You can split CSS or JS into separate files for scalability.
+
+🚀 How to Use
+Clone or download this repository.
+
+Open index.html in your browser.
+
+Click:
+
+START to begin countdown.
+
+STOP to pause the timer.
+
+RESET to return to 25:00.
+
+💡 Possible Improvements
+Add audio alert on timeout.
+
+Make timer duration adjustable.
+
+Show progress visually (e.g., progress bar or circular ring).
+
+🛠 Tech Stack
+HTML
+
+CSS
+
+JavaScript (Vanilla)
+
+
+
